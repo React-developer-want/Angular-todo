@@ -1,0 +1,14 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 [ngClass]="{'strike': !todo.status, 'card-title': true}">{{todo.title}}</h5>
+    <p [ngClass]="{'strike': !todo.status, 'card-text': true}">{{todo.desc}}</p>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="checkbox" (click)="onCheckboxClick(todo)">
+      <label class="form-check-label" for="checkbox">Mark this as done</label>
+    </div>
+    <div class="d-flex gap-2">
+      <button type="button" class="btn btn-primary" (click)="onClickEdit(todo)">Edit todo</button>
+      <button type="button" class="btn btn-danger" (click)="onClickDelete(todo)">Delete todo</button>
+    </div>
+  </div>
+</div>

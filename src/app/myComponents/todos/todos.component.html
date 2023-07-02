@@ -1,0 +1,30 @@
+<div class="container-fluid mt-4">
+  <h3 class="text-center p-2 border border-bottom-2 border-top-0 border-start-0 border-end-0 border-primary">TODO
+    list by
+    Sumit</h3>
+  <div class="container mt-4">
+    <div class="add-todos">
+      <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+    </div>
+
+    <div class="todos mt-3">
+      <h5 class="p-2 border border-bottom-2 border-top-0 border-start-0 border-end-0 border-primary">
+        Your Todos
+      </h5>
+      <div *ngIf="todos.length === 0; else elseBlock">
+        <div class="container text-center">
+          No todos to display
+        </div>
+      </div>
+
+      <ng-template #elseBlock>
+        <div class="d-flex justify-content-center p-2 flex-wrap gap-3">
+          <div *ngFor="let todo of todos">
+            <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)" (todoEdit)="editTodo($event)"
+              (todoCheckbox)="toggleTodo($event)"></app-todo-item>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
