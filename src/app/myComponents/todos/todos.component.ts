@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { TODO } from 'src/app/todo';
+import { TODO } from 'src/app/Todo';
 import { AddTodoComponent } from '../add-todo/add-todo.component';
 
 @Component({
